@@ -15,5 +15,11 @@ public class Stack<T> {
         return topIndex == -1;
     }
 
+    public boolean isFull() {
+        return topIndex == capacity - 1;
+    }
+
+
+
 
 }
