@@ -9,6 +9,19 @@ public class MinStack<T> {
         minStack = new Stack<>(capacity);
     }
 
+    public boolean isEmpty() {
+        return stack.isEmpty();
+    }
+
+    public boolean isFull() {
+        return stack.isFull();
+    }
+
+    public int size() {
+        return stack.size();
+    }
+
+
 
 
 
