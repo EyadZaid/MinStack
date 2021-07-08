@@ -64,4 +64,10 @@ public class MinStackTest {
 
         assertEquals(expectedMin, stack.getMinimum());
     }
+
+    @Test
+    public void empty_minStack_test() {
+        MinStack<Integer> stack = new MinStack<>(100);
+        assertNull(stack.getMinimum());
+    }
 }
