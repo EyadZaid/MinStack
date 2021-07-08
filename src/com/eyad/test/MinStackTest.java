@@ -3,6 +3,7 @@ package com.eyad.test;
 import com.eyad.MinStack;
 import com.eyad.Stack;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -67,7 +68,25 @@ public class MinStackTest {
 
     @Test
     public void empty_minStack_test() {
-        MinStack<Integer> stack = new MinStack<>(100);
-        assertNull(stack.getMinimum());
+        assertThrows(RuntimeException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                MinStack<Integer> stack = new MinStack<>(100);
+                stack.getMinimum();
+            }
+        });
+    }
+
+    @Test
+    public void full_minStack_test() {
+        assertThrows(RuntimeException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                MinStack<Integer> stack = new MinStack<>(10);
+                for (int i=1; i<=11; i++) {
+                    stack.push(i);
+                }
+            }
+        });
     }
 }

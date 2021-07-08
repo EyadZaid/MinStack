@@ -2,6 +2,7 @@ package com.eyad.test;
 
 import com.eyad.Stack;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,23 +22,37 @@ public class StackTest {
 
     @Test
     public void empty_stack_test() {
-        Stack<Integer> stack = new Stack<>(10);
-        assertNull(stack.pop());
+        assertThrows(RuntimeException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Stack<Integer> stack = new Stack<>(10);
+                stack.pop();
+            }
+        });
     }
 
     @Test
     public void capacity_stack_test() {
-        Stack<Integer> stack = new Stack<>(0);
-        assertNull(stack.pop());
+        assertThrows(RuntimeException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Stack<Integer> stack = new Stack<>(0);
+                stack.pop();
+            }
+        });
     }
 
     @Test
     public void full_stack_test() {
-        Stack<Integer> stack = new Stack<>(10);
-        for (int i=1; i<=11; i++) {
-            stack.push(i);
-        }
-        assertEquals(10, stack.size());
+        assertThrows(RuntimeException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Stack<Integer> stack = new Stack<>(10);
+                for (int i=1; i<=11; i++) {
+                    stack.push(i);
+                }
+            }
+        });
     }
 
     @Test
