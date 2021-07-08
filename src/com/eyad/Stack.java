@@ -25,8 +25,7 @@ public class Stack<T> {
 
     public void push(T item) {
         if (isFull()) {
-            System.out.println("Exception: The stack is full.");
-            return;
+            throw new RuntimeException("The stack is full.");
         }
         topIndex++;
         data[topIndex] = item;
@@ -34,16 +33,14 @@ public class Stack<T> {
 
     public T pop() {
         if (isEmpty()) {
-            System.out.println("Exception: The stack is empty.");
-            return null;
+            throw new RuntimeException("The stack is empty.");
         }
         return data[topIndex--];
     }
 
     public T peek() {
         if (isEmpty()) {
-            System.out.println("Exception: The stack is empty.");
-            return null;
+            throw new RuntimeException("The stack is empty.");
         }
         return data[topIndex];
     }
