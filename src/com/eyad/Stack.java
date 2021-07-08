@@ -28,7 +28,6 @@ public class Stack<T> {
             System.out.println("Exception: The stack is full.");
             return;
         }
-
         topIndex++;
         data[topIndex] = item;
     }
@@ -38,8 +37,15 @@ public class Stack<T> {
             System.out.println("Exception: The stack is empty.");
             return null;
         }
-
         return data[topIndex--];
+    }
+
+    public T peek() {
+        if (isEmpty()) {
+            System.out.println("Exception: The stack is empty.");
+            return null;
+        }
+        return data[topIndex];
     }
 
 }
