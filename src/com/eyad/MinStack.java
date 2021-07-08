@@ -23,7 +23,6 @@ public class MinStack<T extends Comparable<T>> {
 
     public void push(T item) {
         if (isFull()) {
-            System.out.println("Exception: The stack is full.");
             return;
         }
         stack.push(item);
@@ -36,19 +35,19 @@ public class MinStack<T extends Comparable<T>> {
 
     public T pop() {
         if (isEmpty()) {
-            System.out.println("Exception: The stack is empty.");
             return null;
         }
         minStack.pop();
         return stack.pop();
     }
 
+    public T peek() {
+        return stack.peek();
+    }
 
-
-
-
-
-
+    public T getMinimum() {
+        return minStack.peek();
+    }
 
 
 }
