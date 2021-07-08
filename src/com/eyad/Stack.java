@@ -1,5 +1,8 @@
 package com.eyad;
 
+/**
+ * Stack implementation
+ */
 public class Stack<T> {
     private final T[] data;
     private final int capacity;

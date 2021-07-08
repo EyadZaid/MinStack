@@ -1,5 +1,8 @@
 package com.eyad;
 
+/**
+ * Min stack implementation
+ */
 public class MinStack<T extends Comparable<T>> {
     private final Stack<T> stack;
     private final Stack<T> minStack;
