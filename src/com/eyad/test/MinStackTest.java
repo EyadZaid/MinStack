@@ -42,4 +42,26 @@ public class MinStackTest {
 
         assertEquals(expectedMin, stack.getMinimum());
     }
+
+    @Test
+    public void removedMin_minStack_test() {
+        MinStack<Integer> stack = new MinStack<>(1000);
+        var expectedMin = -400;
+
+        for (int i=-400; i<=0; i++) {
+            stack.push(i);
+        }
+
+        stack.push(-982);
+
+        for (int i=1; i<=10; i++) {
+            stack.push(i);
+        }
+
+        for (int i=1; i<=11; i++) {
+            stack.pop();
+        }
+
+        assertEquals(expectedMin, stack.getMinimum());
+    }
 }
