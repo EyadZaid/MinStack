@@ -23,6 +23,16 @@ public class Stack<T> {
         return topIndex + 1;
     }
 
+    public void push(T item) {
+        if (isFull()) {
+            System.out.println("Exception: The stack is full.");
+            return;
+        }
+
+        topIndex++;
+        data[topIndex] = item;
+    }
+
 
 
 
