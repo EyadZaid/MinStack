@@ -33,8 +33,13 @@ public class Stack<T> {
         data[topIndex] = item;
     }
 
+    public T pop() {
+        if (isEmpty()) {
+            System.out.println("Exception: The stack is empty.");
+            return null;
+        }
 
-
-
+        return data[topIndex--];
+    }
 
 }
