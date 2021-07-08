@@ -19,6 +19,11 @@ public class Stack<T> {
         return topIndex == capacity - 1;
     }
 
+    public int size() {
+        return topIndex + 1;
+    }
+
+
 
 
 
